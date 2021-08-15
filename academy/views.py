@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate, login, logout
 
 def form_registration(request):
     print(request.POST)
-    return render(request, 'register_student.html')
+    return render(request, 'form_registration.html')
 
 
 def login_me(request):
@@ -32,6 +32,14 @@ def login_me(request):
 def logout_me(request):
     logout(request)
     return redirect('/')
+
+
+def register_class(request):
+    if(request.GET == {}):
+        return render(request, 'register_class.html')
+    else:
+        print(request.GET)
+        return render(request, 'register_class.html')
 
 
 def dashboard(request):
