@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin-top: 100px;"></div>
+<div class="">
+    <div class="container-lg py-4">
+        <div class="row justify-content-center ">
+            <div class="col-lg-8">
+                <div class="section-title text-center">
+                    <h2 class="fw-bold mb-5">Pendaftaran ICL Academy</h2>
+                </div>
+            </div>
+            <div class="row">
+                <form action="/form-registration/" method="POST">
+                    {% csrf_token %}
+                    <div class="col-lg-12">
+                        <div class="contact-form">
+                            <div class="row">
+                                <div class="col mb-4">
+                                    <label for="input-name" class="mb-2">Nama lengkap</label>
+                                    <input name="name" id="input-name" type="text" placeholder="Nama lengkap"
+                                        class="form-control form-control-lg fs-6">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 mb-4">
+                                    <label for="input-tempat-lahir" class="mb-2">Tempat lahir</label>
+                                    <input name="tempat-lahir" id="input-tempat-lahir" type="text"
+                                        placeholder="Tempat lahir" class="form-control form-control-lg fs-6">
+
+                                </div>
+                                <div class="col-6 mb-4">
+                                    <label for="input-tanggal-lahir" class="mb-2">Tanggal lahir</label>
+                                    <input name="tanggal-lahir" id="input-tanggal-lahir" type="date"
+                                        class="form-control form-control-lg fs-6">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-4">
+                                    <label for="input-gender" class="mb-2">Jenis kelamin</label>
+                                    <select name="jenis-kelamin" id="input-gender" class="form-control">
+                                        <option>Laki-laki</option>
+                                        <option>Perempuan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-4">
+                                    <label for="input-pekerjaan" class="mb-2">Pekerjaan</label>
+                                    <input name="pekerjaan" id="input-pekerjaan" type="text" placeholder="Pekerjaan"
+                                        class="form-control form-control-lg fs-6">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-4">
+                                    <label for="input-alamat" class="mb-2">Alamat</label>
+                                    <textarea name="alamat" class="form-control form-control-lg fs-6" id="input-alamat"
+                                        rows="2"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-4">
+                                    <label for="input-hp" class="mb-2">No.HP</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">+62</div>
+                                        </div>
+                                        <input name="handphone" type="text" class="form-control" id="input-hp"
+                                            placeholder="nomor handphone">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-4">
+                                    <label for="input-pendidikan" class="mb-2">Pendidikan terakhir</label>
+                                    <select name="pendidikan" id="input-pendidikan" class="form-control">
+                                        <option>SD</option>
+                                        <option>SMP</option>
+                                        <option>SMA</option>
+                                        <option>D3</option>
+                                        <option>S1</option>
+                                        <option>S2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mb-4">
+                                    <label class="mb-2">Persyaratan</label>
+                                    <ul class="ml-4">
+                                        <li class="">Mengisi formulir</li>
+                                        <li class="">Fotocopy KTP atau Kartu Pelajar</li>
+                                        <li class="">Foto diri ukuran 3 x 4 = 2 buah (Latar belakang merah)
+                                        </li>
+                                        <li class="">Biaya pendaftaran : Umum Rp 50.000, Siswa Rp.30.000</li>
+                                        <li class="">Biaya pelatihan sesuai dengan kelas pilihan siswa</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <button id="btn-submit-daftar" type="submit" class="btn btn-danger">Daftar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock script %}

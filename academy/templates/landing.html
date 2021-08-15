@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="header">
+    <div class=" header-content container-lg">
+        <div class="row min-vh-100 align-items-center">
+            <!-- <div class="col-md-12">
+                <div class="profile-text">
+                    <p>Welcome, customer !</p>
+                    <h1 class="fw-bold fs-1 text-danger text-uppercase">Electronic Shop</h1>
+                    <h2>From A to Z and from 0 to 1</h2>
+                    <p>Find your best and top quality electronic goods here. lorem ipsum dolor sit amet.</p>
+                    <button class="btn btn-danger">To the shop</button>
+                </div>
+            </div> -->
+            <div class="container-lg">
+                <div class="row min-vh-100 align-items-center align-content-center">
+                    <div class="col-md-6">
+                        <div class="profile-img text-center">
+                            <img style="max-width: 400px;" class="rounded-circle"
+                                src="https://icl.ub.ac.id/wp-content/uploads/2021/08/ICL.png">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-md-0">
+                        <div class="profile-text">
+                            {% if user.is_authenticated %}
+                            <p class="m-0">Selamat datang, {{ user.username }} !</p>
+                            {% else %}
+                            <p class="m-0">Selamat datang!</p>
+                            {% endif %}
+                            <h1 class="fw-bold fs-1 text-danger text-uppercase">ICL Academy</h1>
+                            <h3>Tempat terbaik untuk belajar materi termutakhir</h3>
+                            <p>Menyediakan pelatihan <i>microsoft office, web programming, </i>dan komputer untuk segala
+                                usia.</p>
+                            <button class="btn btn-danger">Daftar Kelas</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-lg">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="text-center mt-4 mb-4">
+                <h2 class="fw-bold"> Daftar Kelas</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center mb-4">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="skills-item card shadow-sm p-4 rounded bg-white">
+                <img style="height: 200px;"
+                    src="https://asset.kompas.com/crops/KEmOx4HijEndyaoRDNiOI-G5zYU=/155x0:1843x1125/750x500/data/photo/2021/01/28/601232fbdd121.jpg">
+                <div class="icon text-danger fs-2 my-3">
+                    Smartphone
+                </div>
+                <h4>Best gadget for your budget</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet.</p>
+                <a class="btn btn-outline-danger" href="../shop-smartphone">See Catalog </a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="skills-item card shadow-sm p-4 rounded bg-white">
+                <img style="height: 200px;"
+                    src="https://jejakpiknik.com/wp-content/uploads/2021/05/toko-laptop-di-margonda-depok.jpg">
+
+                <div class="icon text-danger fs-2 my-3">
+                    Laptop
+                </div>
+                <h4>Powerful yet easy to use</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet.</p>
+                <a class="btn btn-outline-danger" href="../shop-laptop">See Catalog </a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="skills-item card shadow-sm p-4 rounded bg-white">
+                <img style="height: 200px;"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREgeoYUsnp0qfyGzhyO6-orfK03PceQztzRCRO1D_TW7N_mu7ACQVIajho2aL_ydnQsWk&usqp=CAU">
+
+                <div class="icon text-danger fs-2 my-3">
+                    Console
+                </div>
+                <h4>Good luck, Have fun, don't slack</h4>
+                <p class="text-muted">Lorem ipsum dolor sit amet.</p>
+                <a class="btn btn-outline-danger" href="../shop-console">See Catalog </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light">
+    <div class="container-lg">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mt-4 mb-4">
+                    <h2 class="fw-bold"> Our Contact & Location</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card d-flex mb-3 p-3">
+                    <span>icon</span>
+                    <h5 class="fw-bold fs-4 m-0">Email</h5>
+                    <p class="text-muted m-0">arnas.bgr@gmail.com</p>
+                </div>
+                <div class="card d-flex mb-3 p-3">
+                    <span>icon</span>
+                    <h5 class="fw-bold fs-4 m-0">Linkedin</h5>
+                    <p class="text-muted m-0">arnas.bgr@gmail.com</p>
+                </div>
+                <div class="card d-flex mb-3 p-3">
+                    <span>icon</span>
+                    <h5 class="fw-bold fs-4 m-0">Github</h5>
+                    <p class="text-muted m-0">arnas.bgr@gmail.com</p>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card d-flex mb-3 p-3">
+                    <span>icon</span>
+                    <h5 class="fw-bold fs-4 m-0">Email</h5>
+                    <p class="text-muted m-0">arnas.bgr@gmail.com</p>
+                </div>
+                <div class="card d-flex mb-3 p-3">
+                    <span>icon</span>
+                    <h5 class="fw-bold fs-4 m-0">Linkedin</h5>
+                    <p class="text-muted m-0">arnas.bgr@gmail.com</p>
+                </div>
+                <div class="card d-flex mb-3 p-3">
+                    <span>icon</span>
+                    <h5 class="fw-bold fs-4 m-0">Github</h5>
+                    <p class="text-muted m-0">arnas.bgr@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static 'js/behaviour.js'%}"></script>
+{% endblock script %}
