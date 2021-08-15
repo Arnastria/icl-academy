@@ -12,38 +12,70 @@
                 </div>
             </div>
             <div class="row">
-                <form action="/form-registration/" method="POST">
+                <form action="/class-register/" method="POST">
                     {% csrf_token %}
                     <div class="col-lg-12">
                         <div class="contact-form">
                             <div class="row">
                                 <div class="col mb-4">
-                                    <label for="input-gender" class="mb-2">Jenis kelamin</label>
-                                    <select name="jenis-kelamin" id="input-gender" class="form-control">
-                                        <option>Laki-laki</option>
-                                        <option>Perempuan</option>
+                                    <label for="input-branch" class="mb-2">Cabang ICL Academy</label>
+                                    <select name="input-branch" id="input-branch" class="form-control">
+                                        <option>Soekarno-hatta</option>
+                                        <option>Sulfat</option>
+                                        <option>Blimbing</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col mb-4">
-                                    <label for="input-gender" class="mb-2">Jenis kelamin</label>
-                                    <select name="jenis-kelamin" id="input-gender" class="form-control">
-                                        <option>Laki-laki</option>
-                                        <option>Perempuan</option>
+                                    <label for="input-class" class="mb-2">Kelas yang ingin diikuti</label>
+                                    <select name="input-class" id="input-class" class="form-control">
+                                        <option>Microsoft Office</option>
+                                        <option>Web Programming</option>
+                                        <option>Graphic Design</option>
                                     </select>
                                 </div>
                             </div>
                             <div>
-                                <button id="btn-submit-daftar" type="submit" class="btn btn-danger">Daftar</button>
+                                <!-- <button class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Daftar</button> -->
                             </div>
                         </div>
                     </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Daftar kelas
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Pendaftaran Kelas</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Anda akan mendaftar pada kelas ICL Academy.</p>
+                                    <P class="m-0">Apakah anda ingin melanjutkan ?</P>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                                    <button id="btn-submit-daftar" type="submit" type="button"
+                                        class="btn btn-success">Ya, saya ingin mendaftar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </form>
             </div>
         </div>
     </div>
 </div>
+
 
 {% endblock content %}
 

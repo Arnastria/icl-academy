@@ -36,6 +36,7 @@ def logout_me(request):
 
 def register_class(request):
     if(request.GET == {}):
+        print(request.POST)
         return render(request, 'register_class.html')
     else:
         print(request.GET)
