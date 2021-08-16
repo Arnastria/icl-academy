@@ -23,7 +23,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="section-title text-center">
-                <h2 class="fw-bold mb-5">Daftar Kelas</h2>
+                <h2 class="fw-bold mb-5">Daftar Kelas untuk Cabang {{branch.name}}</h2>
             </div>
         </div>
     </div>
@@ -32,22 +32,28 @@
             <thead>
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Jumlah Pertemuan</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">Button</th>
                 </tr>
             </thead>
             <tbody>
-                {% for item in product_list %}
+                {% for item in class_list %}
                 <tr>
                     <td scope="col">{{forloop.counter}}</td>
-                    <td scope="col">{{item.name}}</td>
-                    <td scope="col">{{item.description}}</td>
-                    <td scope="col">{{item.price}}</td>
+                    <td scope="col">{{item.classRegistered.name}}</td>
+                    <td scope="col">{{item.classRegistered.meetingsCount}}</td>
+                    <td scope="col">{{item.classRegistered.price}}</td>
+                    <td scope="col"><a class="btn btn-primary" href="/detail-kelas/{{item.classRegistered.id}}">Detail
+                            Kelas</a></td>
+
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+        <h3>Jumlah total pendapatan untuk cabang {{branch.name}} adalah</h3>
+        <h4 class="text-success">Rp. {{sum_profit}}</h4>
     </div>
 
 

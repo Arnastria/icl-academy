@@ -33,6 +33,7 @@ class StudentData(models.Model):
 class ClassData(models.Model):
     name = models.CharField(max_length=200)
     meetingsCount = models.SmallIntegerField()
+    # activeDay = models.CharField(max_length=200, null=True)
     price = models.IntegerField()
 
 
