@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin-top: 100px;"></div>
+<div class="">
+    <div class="container-lg py-4">
+        <div class="row justify-content-center ">
+            <div class="col-lg-8">
+                <div class="section-title text-center">
+                    <h2 class="fw-bold mb-5">Pendaftaran Akun</h2>
+                </div>
+            </div>
+            <div class="row">
+                <form action="/register-user/" method="POST">
+                    {% csrf_token %}
+                    <div class="row justify-content-center ">
+                        <div class="col-6">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" placeholder="username"
+                                class="form-control form-control-lg fs-6">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center ">
+                        <div class="col-6">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" placeholder="password"
+                                class="form-control form-control-lg fs-6">
+                        </div>
+
+                    </div>
+                    <div class="row justify-content-center ">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-success mt-3" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Daftar Akun</button>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center ">
+                        <div class="col-6">
+                            <span class="text-danger">{{ message }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Pendaftaran Akun</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Anda akan membuat akun pada ICL Academy.</p>
+                                    <P class="m-0">Pastikan <b>username</b> dan <b>password</b> telah terisi dengan
+                                        benar</P>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                                    <button id="btn-submit-daftar" type="submit" type="button"
+                                        class="btn btn-success">Ya, saya ingin mendaftar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock script %}

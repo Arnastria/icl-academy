@@ -35,12 +35,27 @@ def logout_me(request):
 
 
 def register_class(request):
-    if(request.GET == {}):
-        print(request.POST)
-        return render(request, 'register_class.html')
-    else:
+    if(request.POST == {}):
         print(request.GET)
         return render(request, 'register_class.html')
+    else:
+        print(request.POST)
+        return render(request, 'register_class.html')
+
+
+def register_user(request):
+    if(request.POST == {}):
+        print(request.GET)
+        return render(request, 'register_user.html')
+    else:
+        print(request.POST)
+        user = User.objects.create(
+            username=request.POST['username'],
+            user_level=2
+        )
+        user.set_password(request.POST['password'])
+        user.save()
+        return redirect('/')
 
 
 def dashboard(request):
